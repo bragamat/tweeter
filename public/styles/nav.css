@@ -1,0 +1,64 @@
+*, body{
+
+	margin: 0;
+	padding: 0;
+}
+nav {
+	position: fixed;
+	width: 100%;
+	height: 80px;
+	background-color: #00a087;
+	color: #e8fdff;
+	padding-left: 2em;
+	padding-right: 2em;
+	padding-top: 0;
+	/*margin-bottom: 80px;*/
+}
+#nav-bar {
+	float: left;
+	z-index: 1;
+}
+
+#nav-bar img{
+	width: 80px;
+	height: 80px;
+	margin-right: 5px;
+}
+#nav-bar .header {
+	position: absolute;
+	line-height: 80px;
+	font-size: 2em;
+	margin-left: 5px;
+}
+
+main.container {
+	/*position: relative;*/
+	width:450px;
+	height: 1000px;
+	background-color: white;
+	margin: auto;
+	padding-top: 140px;
+}
+
+.composeTT {
+	float: right;
+	margin-top: auto;
+	width: 170px;
+	height: 60px;
+	margin-top: 10px;
+	font-size: 25px;
+	border-radius: 5px;
+	opacity: 0.8;
+	color: green;
+	border: 1px solid black;
+}
+.composeTT img{
+	float: center;
+	margin-right: 20px;
+
+}
+
+.composeTT:hover{
+	opacity: 1.0;
+	color: black;
+}

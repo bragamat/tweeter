@@ -1,0 +1,104 @@
+section.new-tweet {
+	position: relative;
+	margin-left: 2em;
+	margin-right: 2em;
+	border: 1px solid #244751;
+	padding: 10px;
+	border-radius: 5px;
+	background-color: #eee;
+	display: none;
+}
+
+section.new-tweet h2{
+	border-bottom: 1px solid black;
+	margin-bottom: 10px;
+}
+section.new-tweet textarea{
+	width: 100%;
+	padding: 5px;
+}
+
+section.new-tweet input{
+	padding: 5px;
+}
+
+section.new-tweet span{
+	float: right;
+	font-size: 0.8em;
+}
+
+div.profile-user{
+	height: 40px;
+	padding-top: 5px;
+	margin-top: 5px;
+	padding-right: 1em;
+	padding-left: 1em;
+	border-bottom: 1px solid black;
+}
+div.profile-user p{
+	float: right;
+}
+div.profile-user li{
+	list-style: none;
+	float: left;
+	display: inline;
+	/*margin-left: 20px;*/
+	
+}
+div.profile-user li.user-name{
+	margin-left: 20px;
+}
+
+.tweets div.content{
+	height: 80px;
+	line-height: 80px;
+	border-bottom: 0.5px solid grey;
+}
+.tweets {
+	border-radius: 5px;
+	margin-left: 2em;
+	margin-right: 2em;
+	margin-top: 2em;
+	border: 1px solid black;
+	background-color: #eee;
+
+}
+.tweets .content{
+	font-family: Roboto;
+	font-size: 10px;
+	height: 35px;
+	line-height: 35px;
+	background-color: white;
+	padding-left: 5px;
+}
+.tweets footer{
+	font-size: 12px;
+	height: 40px;
+	line-height: 40px;
+	padding-left: 10px;
+	padding-right: 5px;
+	background-color: white;
+	border-bottom-left-radius: 5px;
+	border-bottom-right-radius: 5px;
+}
+.tweets footer li{
+	float: right;
+	display: inline;
+	margin-left: 10px;
+}
+
+.tweets .footer-imgs{
+	display: inline;
+	padding-right: 5px;
+
+}
+
+.tweets li img{
+	width: 30px;
+	height: 30px;
+}
+
+section.tweets:hover {
+	border:1px solid red;
+}
+
