@@ -12,11 +12,11 @@ $( ".composeTT" ).click(function() {
   });
 });
 
-function escape(str) {
-  var div = document.createElement('div');
-  div.appendChild(document.createTextNode(str));
-  return div.innerHTML;
-}
+// function escape(str) {
+//   var div = document.createElement('div');
+//   div.appendChild(document.createTextNode(str));
+//   return div.innerHTML;
+// }
   $( "form" ).on( "submit", function( event ) {   
    event.preventDefault();
    let tweetLength = $("textarea").val().length;
@@ -52,7 +52,7 @@ function escape(str) {
 
 // Test / driver code (temporary). Eventually will get this from the server.
 const createTweetElement = (tweet) =>{
-let content1 = tweet.content.text;
+// let content1 = tweet.content.text;
   
   let content = `<section class="tweets"> <article><header>
             <div class="profile-user">
@@ -64,7 +64,7 @@ let content1 = tweet.content.text;
             </div>
           </header>
           <div class="content">
-           ${escape(content1)}          
+           ${tweet.content.text}          
           </div>
           <footer>
             ${tweet.created_at} days ago
@@ -75,11 +75,12 @@ let content1 = tweet.content.text;
             </ul>
           </footer>
         </article></section>`
-  $('.new-tweet').after(content);
+
+      return content;
 }
 
 const renderTweets = (tweets) =>{
   tweets.forEach(tweet =>{
-    createTweetElement(tweet);
+    $('.new-tweet').after(createTweetElement(tweet));
   });
 }
