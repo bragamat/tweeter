@@ -12,11 +12,11 @@ $( ".composeTT" ).click(function() {
   });
 });
 
-function escape(str) {
-  var div = document.createElement('div');
-  div.appendChild(document.createTextNode(str));
-  return div.innerHTML;
-}
+// function escape(str) {
+//   var div = document.createElement('div');
+//   div.appendChild(document.createTextNode(str));
+//   return div.innerHTML;
+// }
   $( "form" ).on( "submit", function( event ) {   
    event.preventDefault();
    let tweetLength = $("textarea").val().length;
@@ -53,25 +53,25 @@ function escape(str) {
 // Test / driver code (temporary). Eventually will get this from the server.
 const createTweetElement = (tweet) =>{
 // let content1 = tweet.content.text;
-  
+  // let date = Date(tweet.created_at);
   let content = `<section class="tweets"> <article><header>
             <div class="profile-user">
               <ul>
-                <li><img src="${tweet.user.avatars.small}" alt=" "></li>
+                <li><img src="${tweet.user.avatars.regular}" alt=" "></li>
                 <li class="user-name">${tweet.user.name}</li>
+              <li class="user-handle">${tweet.user.handle}</li>
               </ul>
-              <p>${tweet.user.handle}</p>
             </div>
           </header>
           <div class="content">
-           ${escape(tweet.content.text)}          
+           ${tweet.content.text}          
           </div>
           <footer>
-            ${tweet.created_at} days ago
             <ul class="footer-imgs">
-              <li><img src="" alt=" "></li>
-              <li><img src="" alt=" "></li>
-              <li><img src="" alt=" "></li>
+              <li><a href=""><i class="fas fa-heart"></i></a></li>
+              <li><a href=""><i class="fab fa-font-awesome-flag" style="margin-right: 5px;"></i></a></li>
+              <li><a href=""><i class="fas fa-retweet" style="margin-right: 5px;"></i></a></li>
+            <li class="tweet-created">${tweet.created_at} days ago</li>
             </ul>
           </footer>
         </article></section>`

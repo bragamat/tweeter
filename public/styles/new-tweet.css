@@ -1,3 +1,6 @@
+*{	list-style: none;}
+
+
 section.new-tweet {
 	position: relative;
 	margin-left: 2em;
@@ -26,82 +29,97 @@ section.new-tweet span{
 	float: right;
 	font-size: 0.8em;
 }
+/**/
 
-
-
-div.profile-user{
-	height: 40px;
-	padding-top: 5px;
-	margin-top: 5px;
-	padding-right: 1em;
-	padding-left: 1em;
-	border-bottom: 1px solid black;
-}
-div.profile-user p{
-	float: right;
-}
-div.profile-user li{
-	list-style: none;
-	float: left;
-	display: inline;
-	/*margin-left: 20px;*/
-	
-}
-div.profile-user li.user-name{
-	margin-left: 20px;
-}
-
-.tweets div.content{
-	height: 80px;
-	line-height: 80px;
-	border-bottom: 0.5px solid grey;
-}
-.tweets {
-	border-radius: 5px;
+section.tweets {
+	margin-bottom: 10px;
+	margin-top: 10px;
 	margin-left: 2em;
 	margin-right: 2em;
-	margin-top: 2em;
-	border: 1px solid black;
-	background-color: #eee;
+}
 
+article{
+	border:1px solid black;
+	border-radius: 5px;
+	opacity: 0.7;
 }
-.tweets .content{
-	font-family: Roboto;
-	font-size: 10px;
-	height: 35px;
-	line-height: 35px;
-	background-color: white;
-	padding-left: 5px;
+header {
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+  position: relative;
+  /*border-bottom: 1px solid black;*/
+  vertical-align: center;
+  background-color: #F5F5F5;
 }
-.tweets footer{
+
+header ul {
+	padding: 5px;
+	display: inline-flex;
+	align-items: top;
+	font-size: 20px;
+	font-family: Roboto, san-serif;
+	font-weight: 700;
+	/*margin-right: 5px;*/
+}
+header li.user-name{
+	margin-left: 10px;
+	margin-top:5px;
+}
+header li.user-handle {
+	float: right;
 	font-size: 12px;
-	height: 40px;
-	line-height: 40px;
-	padding-left: 10px;
-	padding-right: 5px;
-	background-color: white;
-	border-bottom-left-radius: 5px;
-	border-bottom-right-radius: 5px;
+	margin-left: 80px;
+	margin-top: 40px;
 }
-.tweets footer li{
+
+.profile-user img{
+	border-radius:5px;
+}
+
+.content {
+	height: 100px;
+	line-height: 100px;
+	padding-left: 15px;
+	border-bottom:1px solid #F5F5F5;
+}
+
+footer {
+	height: 50px;
+	line-height: 50px;
+	padding-right: 10px;
+}
+
+footer li{
 	float: right;
 	display: inline;
-	margin-left: 10px;
 }
 
-.tweets .footer-imgs{
+footer ul.footer-imgs li{
+	display: none;
+}
+footer ul li.tweet-created {
+	margin-right: 185px;
+	display: inline-flex;
+}
+
+article:hover{
+	opacity: 1;
+}
+article:hover footer ul li{
+	opacity: 1;
 	display: inline;
-	padding-right: 5px;
-
+}
+article:hover li.tweet-created{
+	margin-right: 125px;
 }
 
-.tweets li img{
-	width: 30px;
-	height: 30px;
-}
 
-section.tweets:hover {
-	border:1px solid red;
-}
 
-*/
+
+
+
+
+
+
+
+

@@ -52,6 +52,9 @@ main.container {
 	color: green;
 	border: 1px solid black;
 }
+.composeTT:hover {
+	cursor: pointer;
+}
 .composeTT img{
 	float: center;
 	margin-right: 20px;

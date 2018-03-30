@@ -8,7 +8,6 @@
     <link rel="stylesheet" href="/vendor/normalize-4.1.1.css" type="text/css" />
     <link href="https://fonts.googleapis.com/css?family=Roboto:300,300i,700,700i" rel="stylesheet">
 
-
     <!-- App CSS -->
     <link rel="stylesheet" href="/styles/layout.css" type="text/css" />
     <link rel="stylesheet" href="/styles/nav.css" type="text/css" />
@@ -16,6 +15,9 @@
 
     <!-- External JS -->
     <script type="text/javascript" src="/vendor/jquery-2.2.3.min.js"></script>
+    <script defer src="https://use.fontawesome.com/releases/v5.0.9/js/all.js" integrity="sha384-8iPTk2s/jMVj81dnzb/iFR2sdA7u06vHJyyLlAd4snFpCl/SnyUjRrbdJsw1pGIl" crossorigin="anonymous"></script>
+
+
 
     <!-- App JS -->
     <script type="text/javascript" src="/scripts/app.js"></script>
@@ -27,7 +29,7 @@
     <nav id="nav-bar">
       <img class="logo" src="/images/bird.png" >
       <span class="header">Tweeter</span>
-      <button class="composeTT" value="Compose"><img src="" alt=" "> Compose</button>
+      <button class="composeTT" value="Compose"><i class="far fa-edit"></i>Compose</button>
     </nav>
 
     <!-- Page-specific (main) content here -->
@@ -45,38 +47,28 @@
 
 <section class="tweets">
  <article>
-   <header>
-     <div class="profile-user">
-      <ul>
-       <li><img src="" alt=" "></li>
-       <li class="user-name">BILL FIELDS</li>
-        </ul>
-          <p>@MrFields</p>
-     </div>
-            
 
-          </header>
+ <header>
+            <div class="profile-user">
+              <ul>
+                <li><img src="${tweet.user.avatars.regular}" alt=" "></li>
+                <li class="user-name">${tweet.user.name}</li>
+              <li class="user-handle">${tweet.user.handle}</li>
+              </ul>
+            </div>
+</header>
+  <div class="content">          ${tweet.content.text} 
+    </div>
 
-          <div class="content">
-          
-          my tweet
-          
-          </div>
-
-          <footer>
-
-            10 days ago
-            
-            <ul class="footer-imgs">
-              <li><img src="" alt=" "></li>
+       <footer>
+          <ul class="footer-imgs">
+          <li class="tweet-created">${tweet.created_at} days ago</li>
+            <li><img src="" alt=" "></li>
               <li><img src="" alt=" "></li>
               <li><img src="" alt=" "></li>
             </ul>
-
           </footer>
-
         </article>
-
       </section> -->
 
     </main>
