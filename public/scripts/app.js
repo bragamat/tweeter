@@ -12,11 +12,11 @@ $( ".composeTT" ).click(function() {
   });
 });
 
-// function escape(str) {
-//   var div = document.createElement('div');
-//   div.appendChild(document.createTextNode(str));
-//   return div.innerHTML;
-// }
+function escape(str) {
+  var div = document.createElement('div');
+  div.appendChild(document.createTextNode(str));
+  return div.innerHTML;
+}
   $( "form" ).on( "submit", function( event ) {   
    event.preventDefault();
    let tweetLength = $("textarea").val().length;
@@ -64,7 +64,7 @@ const createTweetElement = (tweet) =>{
             </div>
           </header>
           <div class="content">
-           ${tweet.content.text}          
+           ${escape(tweet.content.text)}          
           </div>
           <footer>
             ${tweet.created_at} days ago

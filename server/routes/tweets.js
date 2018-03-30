@@ -4,6 +4,9 @@ const userHelper    = require("../lib/util/user-helper")
 
 const express       = require('express');
 const tweetsRoutes  = express.Router();
+const MongoClient = require("mongodb").MongoClient;
+const MONGODB_URI = "mongodb://localhost:27017/tweeter";
+
 
 module.exports = function(DataHelpers) {
 

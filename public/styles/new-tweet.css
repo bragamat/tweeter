@@ -27,6 +27,8 @@ section.new-tweet span{
 	font-size: 0.8em;
 }
 
+
+
 div.profile-user{
 	height: 40px;
 	padding-top: 5px;
@@ -102,3 +104,4 @@ section.tweets:hover {
 	border:1px solid red;
 }
 
+*/

@@ -2,16 +2,22 @@
 
 // Simulates the kind of delay we see with network or filesystem operations
 const simulateDelay = require("./util/simulate-delay");
+const MongoClient = require("mongodb").MongoClient;
+const MONGODB_URI = "mongodb://localhost:27017/tweeter";
 
 // Defines helper functions for saving and getting tweets, using the database `db`
 module.exports = function makeDataHelpers(db) {
   return {
 
     // Saves a tweet to `db`
-    saveTweet: function(newTweet, callback) {
+        saveTweet: function(newTweet, callback) {
       simulateDelay(() => {
-        db.tweets.push(newTweet);
+        db.collection('tweets').insertOne(newTweet, (err, result)=>{
+        if (err) {
+          return callback(err);
+        }
         callback(null, true);
+        });
       });
     },
 
@@ -19,9 +25,15 @@ module.exports = function makeDataHelpers(db) {
     getTweets: function(callback) {
       simulateDelay(() => {
         const sortNewestFirst = (a, b) => a.created_at - b.created_at;
-        callback(null, db.tweets.sort(sortNewestFirst));
+      db.collection("tweets").find().toArray((err, tweets) => {
+        if (err) {
+          return callback(err);
+        }
+        console.log(tweets);
+        // callback(null, tweets);
+        callback(null, tweets.sort(sortNewestFirst))
+        });
       });
     }
-
-  };
+  }
 }
