@@ -98,7 +98,7 @@ footer ul.footer-imgs li{
 	display: none;
 }
 footer ul li.tweet-created {
-	margin-right: 185px;
+	margin-right: 265px;
 	display: inline-flex;
 }
 
@@ -110,7 +110,7 @@ article:hover footer ul li{
 	display: inline;
 }
 article:hover li.tweet-created{
-	margin-right: 125px;
+	margin-right: 205px;
 }
 
 

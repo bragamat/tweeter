@@ -53,7 +53,32 @@ $( ".composeTT" ).click(function() {
 // Test / driver code (temporary). Eventually will get this from the server.
 const createTweetElement = (tweet) =>{
 // let content1 = tweet.content.text;
-  // let date = Date(tweet.created_at);
+  let realTime = new Date();
+
+  let time = new Date(tweet.created_at);
+
+  let actualTime = time.getHours();
+
+  let timeAgo = "";
+
+  if(time.getDay() === realTime.getDay()){
+    timeAgo = "hours";
+    actualTime =  12 - time.getHours();
+      if(actualTime < 0){
+        actualTime = actualTime*(-1) + " minutes";
+      }
+    if(time.getMinutes() === realTime.getMinutes()){
+      timeAgo = "";
+      actualTime = "just now";
+    }
+
+  } else if (time.getHours() === (realTime.getHours()+10)){
+    timeAgo = "";
+    actualTime = "just now";
+  };
+
+  timeAgo ="";
+
   let content = `<section class="tweets"> <article><header>
             <div class="profile-user">
               <ul>
@@ -71,7 +96,7 @@ const createTweetElement = (tweet) =>{
               <li><a href=""><i class="fas fa-heart"></i></a></li>
               <li><a href=""><i class="fab fa-font-awesome-flag" style="margin-right: 5px;"></i></a></li>
               <li><a href=""><i class="fas fa-retweet" style="margin-right: 5px;"></i></a></li>
-            <li class="tweet-created">${tweet.created_at} days ago</li>
+            <li class="tweet-created">${actualTime} ${timeAgo}ago</li>
             </ul>
           </footer>
         </article></section>`
