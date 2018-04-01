@@ -24,8 +24,6 @@ module.exports = function(DataHelpers) {
       return;
     } res.redirect("/");
     
-
-    // const user = req.body.user ? req.body.user : userHelper.generateRandomUser();
     const newUser = {
       useremail: req.body.useremail,
       password: req.body.password,
