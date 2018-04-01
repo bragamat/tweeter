@@ -65,7 +65,7 @@ const createTweetElement = (tweet) =>{
 
   let stringReturn = "";
 
-  if (realTime.getDay() === time.getDay()) {
+  if (realTime.getDay() === time.getDay()) { // checking if was posted on the same day
     
     if(realTime.getMinutes() === time.getMinutes()){
       stringReturn = " just now"; 
@@ -76,7 +76,10 @@ const createTweetElement = (tweet) =>{
           } 
           stringReturn = minutes + " minutes ago";
       }else if(realTime.getMinutes() - time.getMinutes() > 59) {
-        let hours = time.getHours();
+        if((realTime.getHours() - time.getHours()) === 1){
+          stringReturn = "1 hour ago";
+        }
+        let hours = realTime.getHours() - time.getHours();
         stringReturn = hours + "hours ago";
       }
        else if(realTime.getDay() === time.getDay()){
@@ -86,6 +89,20 @@ const createTweetElement = (tweet) =>{
     let timeSkip = time.getFullYear();
     stringReturn = timeSkip + "years ago";
   }
+} else if(realTime.getDay() !== time.getDay()) {
+  
+    let day = realTime.getDay() - time.getDay() + 7;
+        
+        if (day === 1) {
+          stringReturn = "yesterday";
+        } 
+        
+        if (day > 1 && day < 30){
+
+          stringReturn = day + " days ago";
+
+        } 
+        
 }
   let content = `<section class="tweets"> <article><header>
             <div class="profile-user">
