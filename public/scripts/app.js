@@ -22,7 +22,7 @@ $( ".composeTT" ).click(function() {
   $( "form" ).on( "submit", function( event ) {   
    event.preventDefault();
    let tweetLength = $("textarea").val().length;
-
+   location.reload(); 
       if(tweetLength > 140 || tweetLength === 0 ){
         alert("nope! Not today");
       } else {
@@ -46,9 +46,11 @@ $( ".composeTT" ).click(function() {
               renderTweets(tweets);
           }
         });
-    } 
+    };
+
     loadTweets();
 });
+
 
 // $("#writing-tweet")[0].reset(); // work on that
 
