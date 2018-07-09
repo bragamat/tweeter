@@ -29,8 +29,6 @@ module.exports = function makeDataHelpers(db) {
         if (err) {
           return callback(err);
         }
-        console.log(tweets);
-        // callback(null, tweets);
         callback(null, tweets.sort(sortNewestFirst))
         });
       });

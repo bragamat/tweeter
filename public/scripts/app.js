@@ -4,9 +4,9 @@
  * Reminder: Use (and do all your DOM work in) jQuery's document ready function
  */
 
+
+// const datedateDealing = require('./dates.js')
 $(document).ready(function(){
-  
-  
 
 $( ".composeTT" ).click(function() {
   $( ".new-tweet" ).slideToggle( "slow", function() {
@@ -14,11 +14,6 @@ $( ".composeTT" ).click(function() {
   });
 });
 
-// function escape(str) {
-//   var div = document.createElement('div');
-//   div.appendChild(document.createTextNode(str));
-//   return div.innerHTML;
-// }
   $( "form" ).on( "submit", function( event ) {   
    event.preventDefault();
    let tweetLength = $("textarea").val().length;
@@ -47,65 +42,14 @@ $( ".composeTT" ).click(function() {
           }
         });
     };
-
     loadTweets();
 });
 
 
-// $("#writing-tweet")[0].reset(); // work on that
-
-// Test / driver code (temporary). Eventually will get this from the server.
 let realTime = new Date();
 
 const createTweetElement = (tweet) =>{
-
-  let time = new Date(tweet.created_at);
-
-  let actualTime = time.getHours();
-
-  let timeAgo = "";
-
-  let stringReturn = "";
-
-  if (realTime.getDay() === time.getDay()) { // checking if was posted on the same day
-    
-    if(realTime.getMinutes() === time.getMinutes()){
-      stringReturn = " just now"; 
-    } else if((realTime.getMinutes() - time.getMinutes()) >= 1 && (realTime.getMinutes() - time.getMinutes() <= 59)){
-        let minutes = realTime.getMinutes() - time.getMinutes();
-          if (minutes === 1){
-            stringReturn = minutes + " minute ago";
-          } 
-          stringReturn = minutes + " minutes ago";
-      }else if(realTime.getMinutes() - time.getMinutes() > 59) {
-        if((realTime.getHours() - time.getHours()) === 1){
-          stringReturn = "1 hour ago";
-        }
-        let hours = realTime.getHours() - time.getHours();
-        stringReturn = hours + "hours ago";
-      }
-       else if(realTime.getDay() === time.getDay()){
-    let hoursdiff = realTime.getHours() - time.getHours();
-    stringReturn = hoursdiff + " hours ago";
-  } else {
-    let timeSkip = time.getFullYear();
-    stringReturn = timeSkip + "years ago";
-  }
-} else if(realTime.getDay() !== time.getDay()) {
-  
-    let day = realTime.getDay() - time.getDay() + 7;
-        
-        if (day === 1) {
-          stringReturn = "yesterday";
-        } 
-        
-        if (day > 1 && day < 30){
-
-          stringReturn = day + " days ago";
-
-        } 
-        
-}
+ let stringReturn = moment(tweet.created_at).fromNow()
   let content = `<section class="tweets"> <article><header>
             <div class="profile-user">
               <ul>

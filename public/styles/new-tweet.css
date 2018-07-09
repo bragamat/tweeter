@@ -99,7 +99,8 @@ footer ul.footer-imgs li{
 	display: none;
 }
 footer ul li.tweet-created {
-	margin-right: 265px;
+	margin-left: 5px;
+	float: left;
 	display: inline-flex;
 }
 
